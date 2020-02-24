@@ -1,11 +1,14 @@
+// require those two first
 let mongoose = require("mongoose");
 let db = require("../models");
 
+// connect the mongoose with this
 mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
 
+// The workoutSeed let should look like this.
 let workoutSeed = [
   {
     day: new Date().setDate(new Date().getDate()-10),
@@ -135,6 +138,7 @@ let workoutSeed = [
   }
 ];
 
+// This one can let you delete more than one
 db.Workout.deleteMany({})
   .then(() => db.Workout.collection.insertMany(workoutSeed))
   .then(data => {
