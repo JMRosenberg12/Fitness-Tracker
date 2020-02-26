@@ -19,6 +19,9 @@ app.use(express.static("Develop/public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
+// connect to the mongoDB 
+mongoose.connect(MONGODB_URI)
+
   
 
 // routes
