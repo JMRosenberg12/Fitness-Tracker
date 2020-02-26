@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 // This const should be equal to express
 const app = express();
+const db = require("./models")
 
 // app.use for 3 things or we can call them, express uses
 app.use(express.urlencoded({ extended: true }));
